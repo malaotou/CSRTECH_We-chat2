@@ -1,0 +1,7 @@
+<span>Login Page</span>
+
+<input type="text" #username placeholder="UserName"/>
+<input type="password" #password placeholder="Password"/>
+
+
+<input type="button" value="login" (click)="login(username.value,password.value)"/>

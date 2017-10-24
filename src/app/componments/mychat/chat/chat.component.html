@@ -1,0 +1,21 @@
+<p>
+  chat works!
+</p>
+<div *ngFor="let msg of msgList">
+  <span>{{msg.text}}</span>
+
+</div> 
+<span>群发消息</span>
+<input type="text"  #value>
+<br> <span>登记房间信息-目前不用</span>
+<input type="text" #room>
+<input type="text" #username>
+
+<input type="button" value="群发" (click)="sendMsg(value.value,'laoma')"/>
+<input type="button" value="Test Message" (click)="createRoom(room.value,username.value)"/>
+
+
+<input type="button" value="JoinRoom" (click)="joinRoom(room.value,username.value)"/>
+
+
+ 

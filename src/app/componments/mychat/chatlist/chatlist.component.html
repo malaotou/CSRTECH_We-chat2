@@ -1,0 +1,10 @@
+
+<div class="leftList" #value>
+    <ul *ngFor="let item of chatlist">
+      <li> <img src={{item.image}} style="width:30px;height:30px;"> {{ item.name }} <input  type="button" (click)="checkthis(item.name)"  value="select this"></li>
+      </ul>
+
+</div>
+<div class="maincontent" ><app-chat ></app-chat></div>
+
+ 

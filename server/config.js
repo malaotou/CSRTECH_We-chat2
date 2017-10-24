@@ -1,0 +1,12 @@
+module.exports={
+    api:{
+            host:'localhost',
+            port:'3000'
+        },
+    db:{
+        host:'',
+        user:'',
+        password:'',
+        port:''
+    }
+}

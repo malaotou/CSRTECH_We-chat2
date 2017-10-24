@@ -1,0 +1,7 @@
+<div *ngFor="let message of messages">
+  {{message.text}}
+</div>
+
+<input #val/><button (click)="sendMessage(val.value)">Send</button>
+
+<input type="button" (click)="login()" value="login"/>
