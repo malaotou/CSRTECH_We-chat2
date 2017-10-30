@@ -1,5 +1,13 @@
 {
     "name": "electron-angular2-starter",
     "version": "0.1",
-    "main": "main.js"
+    "main": "main.js",
+     "scripts": {
+      "start": "electron main.js",
+      "packager": "electron-packager . --platform=Win32 --electron-version=1.6.6  --overwrite"
+  
+    },
+    "devDependencies": {
+      "electron-packager": "^8.7.0"
+    }
   }

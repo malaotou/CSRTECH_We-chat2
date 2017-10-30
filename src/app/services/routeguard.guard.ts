@@ -5,7 +5,7 @@ import { AuthenticateService } from './authenticate.server'
 
 
 @Injectable()
-export class RouteguardGuard implements CanActivate {
+export class RouteGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {

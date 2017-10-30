@@ -78,3 +78,4 @@ io.sockets.on('connection', function(socket) {
         })
     });
 }
+//io.socket.on('connect_failed',function(){});

@@ -1,4 +1,23 @@
+<div class="chatmain">
+ 
+    <input class="searchtext" type="text" placeholder="search" />
+    <ul>
+            <li>
+              <span>群聊測試窗口1</span>
+            </li>
+            <li>
+              <span>群聊測試窗口2</span>
+            </li>
+          </ul>
+  <div class="chat">
+        <!-- 傳入參數 如 room ID ，依據Room 獲取當前信息，並加載-->
+        <app-chat></app-chat>
+        <!-- <router-outlet></router-outlet> -->
+      </div>
+</div>
 
+
+<!--
 <div class="leftList" #value>
     <ul *ngFor="let item of chatlist">
       <li> <img src={{item.image}} style="width:30px;height:30px;"> {{ item.name }} <input  type="button" (click)="checkthis(item.name)"  value="select this"></li>
@@ -7,4 +26,23 @@
 </div>
 <div class="maincontent" ><app-chat ></app-chat></div>
 
- 
+
+<div class="chat_item slide-left">
+    <div class="ext">
+        <p class="attr"></p>
+        <p class="attr" class="no_time">
+            <i class="web_wechat_no-remind" ng-class="web_wechat_no-remind_hl"></i>
+        </p>
+    </div>
+
+    <div class="avatar">
+        <img class="img" src="//res.wx.qq.com/a/wx_fed/webwx/res/static/img/2KriyDK.png" 
+        alt=""/>
+
+        <i class="icon web_wechat_reddot" ></i>
+
+        <i class="icon web_wechat_reddot_middle" ng-class=" web_wechat_reddot_middle"></i>
+
+    </div>
+</div>
+-->

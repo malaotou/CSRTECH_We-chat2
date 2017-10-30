@@ -1,16 +1,18 @@
-var dbconfig=require('config').db;
+var config=require('./config').db;
 var poolModule=require('generic-pool');
-
-var pool=poolModule.createPool({
+var mySql=require('mysql');
+/*var pool=poolModule.createPool({
     name:'mysql',
     create:function(callback){
-        var Client=require('mysql').Client;
-        var c=new Client();
-        c.user=dbconfig.name;
-        c.password=dbconfig.password;
-        c.database=dbconfig.database;
-        c.connect();
-        callback(null,c);
+        var conn=mySql.createConnection({
+            'host':config.host,
+            'port':config.port,
+            'user':config.user,
+            'password':config.password,
+            'database':config.database
+        });
+        //conn.connect();
+        callback(null,conn);
     },
     // 释放一个连接的 handler
     destroy  : function(client) { client.end(); },
@@ -24,26 +26,39 @@ var pool=poolModule.createPool({
     log : true 
 })
  
-module.exports = connectionPool;
-/*
-从连接池中获得链接并使用
-    // 默认无任务优先级， 但是与高优先级一样，在竞争队列的前列
-    pool.acquire(function(err, client) {
-       pool.release(client);
-    });
-
-    // 高优先级获得链接， 在竞争队列的前列
-    pool.acquire(function(err, client) {
-       pool.release(client);
-    }, 0);
-
-     // 中等优先级获得链接
-     pool.acquire(function(err, client) {
-         pool.release(client);
-     }, 1);
-
-     // pool.acquire(handler, priority) 方法接受连个参数 
-     // handler: 获取连接的回掉函数
-     // priority: 获取到链接的竞争优先级
-     // pool.release(client) 方法会将链接放回到连接池当中，当获得的链接没有release的话。将会导致该链接被一直占用
-     */
+module.exports = pool;*/
+ 
+ /**
+ * Step 1 - Create pool using a factory object
+ */
+const factory = {
+    create: function(){
+         return new Promise(function(resolve, reject){
+            var client = mySql.createConnection({
+                'host':config.host,
+                'port':config.port,
+                'user':config.user,
+                'password':config.password,
+                'database':config.database
+            });
+            client.on('connected', function(){
+                resolve(client)
+            })
+        })
+    },
+    destroy: function(client){
+        return new Promise(function(resolve){
+          client.on('end', function(){
+            resolve()
+          })
+          client.disconnect()
+        })
+    }
+}
+ 
+var opts = {
+    max: 10, // maximum size of the pool
+    min: 2 // minimum size of the pool
+}
+ 
+module.exports = poolModule.createPool(factory, opts)

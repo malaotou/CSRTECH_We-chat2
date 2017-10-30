@@ -14,7 +14,7 @@ let mainWindow
 let appIcon = null
 
 ipc.on('put-in-tray', function (event) {
-  const iconName = process.platform === 'win32' ? 'head1.jpg' : 'head1.jpg'
+  //const iconName = process.platform === 'win32' ? 'head1.jpg' : 'head1.jpg'
   const iconPath = path.join(__dirname, iconName)
   appIcon = new Tray(iconPath)
   const contextMenu = Menu.buildFromTemplate([{
@@ -29,7 +29,7 @@ ipc.on('put-in-tray', function (event) {
 
 function createWindow () {
 
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({width: 800, height: 600,frame:false})
 
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
@@ -39,15 +39,15 @@ function createWindow () {
     mainWindow = null
   })
 
-  tray = new Tray('/assets/images/head1.jpg')
-  const contextMenu = Menu.buildFromTemplate([
-    {label: 'Item1', type: 'radio'},
-    {label: 'Item2', type: 'radio'},
-    {label: 'Item3', type: 'radio', checked: true},
-    {label: 'Item4', type: 'radio'}
-  ])
-  tray.setToolTip('This is my application.')
-  tray.setContextMenu(contextMenu)
+  // tray = new Tray('/assets/images/head1.jpg')
+  // const contextMenu = Menu.buildFromTemplate([
+  //   {label: 'Item1', type: 'radio'},
+  //   {label: 'Item2', type: 'radio'},
+  //   {label: 'Item3', type: 'radio', checked: true},
+  //   {label: 'Item4', type: 'radio'}
+  // ])
+  // tray.setToolTip('This is my application.')
+  // tray.setContextMenu(contextMenu)
 }
 app.on('ready', createWindow)
 

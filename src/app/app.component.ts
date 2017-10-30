@@ -3,6 +3,8 @@ import { Overlay } from 'ngx-modialog';
 //import { Modal } from 'ngx-modialog/plugins/bootstrap';
 import {Subject,Observable,BehaviorSubject} from 'rxjs'
 import { AuthenticateService } from './services/authenticate.server'
+
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +15,7 @@ export class AppComponent {
   title = 'app';
   text1:BehaviorSubject<string> =new BehaviorSubject<string>("");
   text2:BehaviorSubject<string> =new BehaviorSubject<string>("");
-  constructor(auth:AuthenticateService){
+  constructor(auth:AuthenticateService,private router:Router){
     //this.text1.debounceTime(1000).subscribe(value=>console.log(value));
     this.isAuthened=auth.isAuthenticated();
     // console.log(this.isAuthened);
@@ -22,6 +24,7 @@ export class AppComponent {
     .subscribe(v=>console.log(v));
      
   }
+
   // onClick(){
   //   this.modal.alert()
   //   .size('lg')
