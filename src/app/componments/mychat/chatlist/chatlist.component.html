@@ -1,20 +1,20 @@
-<div class="chatmain">
- 
+<!-- <div class="chatmain">
+        <input type="text" [ngModel]="currntitem" name="name"/>
     <input class="searchtext" type="text" placeholder="search" />
     <ul>
-            <li>
-              <span>群聊測試窗口1</span>
-            </li>
-            <li>
-              <span>群聊測試窗口2</span>
-            </li>
-          </ul>
+        <li *ngFor="let item of chatRooms"> 
+                <span (click)="bindRoom(item.id)">{{item.name}}</span>
+        </li>
+        </ul>    
+    </div>    
+          
   <div class="chat">
         <!-- 傳入參數 如 room ID ，依據Room 獲取當前信息，並加載-->
-        <app-chat></app-chat>
+        <!-- <app-chat [chatRoom]="currntitem"></app-chat> -->
         <!-- <router-outlet></router-outlet> -->
-      </div>
-</div>
+      
+    <!-- </div> -->
+ <!-- --> 
 
 
 <!--
@@ -46,3 +46,50 @@
     </div>
 </div>
 -->
+<div class="middle-panel">
+    <div class="search-panel">
+      <div class="search-bar">
+        <input type="text" placeholder="搜索"> </div>
+    </div>
+    <div class="list-panel">
+      <div class="data-list">
+        <ul>
+          <li class="active">
+            <a href="#">
+              <img class="com-logo" src="/assets/images/Amazon_48px.png" width="48" height="48" alt="" />
+              <div class="com-name-bar">
+                <span class="com-name">亚马逊</span>
+                <img class="com-rz" src="/assets/images/Vimeo_48px.png" width="16" height="16" alt="" title="已认证" />
+                <span class="talk-time">11:32</span>
+              </div>
+              <div class="com-talk">整体感觉还行，希望不会爆炸</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="com-logo" src="/assets/images/Amazon_48px.png" width="48" height="48" alt="" />
+              <div class="com-name-bar">
+                <span class="com-name">亚马逊</span>
+                <img class="com-rz" src="/assets/images/Vimeo_48px.png" width="16" height="16" alt="" title="已认证" />
+                <span class="talk-time">11:32</span>
+              </div>
+              <div class="com-talk">整体感觉还行，希望不会爆炸</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="com-logo" src="/assets/images/Amazon_48px.png" width="48" height="48" alt="" />
+              <div class="com-name-bar">
+                <span class="com-name">亚马逊</span>
+                <img class="com-rz" src="/assets/images/Vimeo_48px.png" width="16" height="16" alt="" title="已认证" />
+                <span class="talk-time">11:32</span>
+              </div>
+              <div class="com-talk">整体感觉还行，希望不会爆炸</div>
+            </a>
+          </li>
+         
+        </ul>
+
+      </div>
+    </div>
+  </div>

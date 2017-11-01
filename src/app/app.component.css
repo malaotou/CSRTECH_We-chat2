@@ -1,25 +1,26 @@
-
-.row{
-    width:100% !important;
-    height:100%; 
-    position:absolute;
+.row {
+    width: 100% !important;
+    height: 100%;
+    position: absolute;
     overflow: hidden;
-    }
-.col{
+}
+
+.col {
     height: 100% !important;
 }
-.container-fluid{
-    height:100%;
+
+.container-fluid {
+    height: 100%;
 }
-.firstcol{
+
+.firstcol {
     background: #2A2E33;
-    width:60px;  
+    width: 60px;
 }
-.chatContent{
-    position:relative;
+
+.chatContent {
+    position: relative;
     right: 0;
     left: 0;
     width: 90%;
-    
 }
- 

@@ -15,6 +15,9 @@ export class SocketIoDemoService {
   sendMessage(message,token){
     this.socket.emit('sendmsg', message,token);    
   }
+  sendDemoMessage(message,room){
+    this.socket.emit('sendmsg', message,room,null);    
+  }
   
   getMessage(){
     var observable=new Observable(observer=>{     

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-modialog';
+import { FormsModule } from '@angular/forms'
 //import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap'
 import { HttpModule } from '@angular/http'
 
@@ -8,7 +9,6 @@ import { AppComponent } from './app.component';
 import { LeftnavtabComponent } from './componments/leftnavtab/leftnavtab.component';
 import { MycontactComponent } from './componments/mycontact/mycontact.component';
 import { MychatComponent } from './componments/mychat/mychat.component';
-import { ContactlistComponent } from './componments/mycontact/contactlist/contactlist.component';
 import { ContactdetailComponent } from './componments/mycontact/contactdetail/contactdetail.component';
 import { ChatlistComponent } from './componments/mychat/chatlist/chatlist.component';
 import { ChatComponent } from './componments/mychat/chat/chat.component';
@@ -30,7 +30,6 @@ import { AuthModule } from './services/http/AuthHttp'
     LeftnavtabComponent,
     MycontactComponent,
     MychatComponent,
-    ContactlistComponent,
     ContactdetailComponent,
     ChatlistComponent,
     ChatComponent,
@@ -46,7 +45,8 @@ import { AuthModule } from './services/http/AuthHttp'
     routing,
     ModalModule.forRoot(),
     //BootstrapModalModule,
-    AuthModule
+    AuthModule,
+    FormsModule
   ],
   providers: [RouteGuard,AuthenticateService],
   bootstrap: [AppComponent]

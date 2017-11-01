@@ -1,3 +1,10 @@
-<p>
-  此處顯示聯係人詳情！
+<!-- <p>
+  {{company|json}}
 </p>
+<span>{{companyInfo|json}}</span> -->
+
+<div *ngFor="let item of companyInfo" style="height:100%;width:100%">
+  <img src="{{item.avatar}}" width="16" height="16" alt="" />
+  {{item.name}} {{item.description}}
+  <input type="button" value="Send Message" height="200px" width="300px" (click)="chat(item.id)" />
+</div>

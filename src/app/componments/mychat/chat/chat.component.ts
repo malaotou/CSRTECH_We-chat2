@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,OnChanges,Output ,EventEmitter} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Chatmessages } from '../../../modules/chatmessages'
 import { Message } from '../../../modules/message';
@@ -14,34 +14,31 @@ import  'rxjs'
 })
 export class ChatComponent implements OnInit {
   socket = null;
-  // @Input() chatId="pp";
+  @Input() chatRoom:any;
+  @Output() lastMessageEmitter=new EventEmitter()
   currentmsg:any;
+  currentRoom:any;
   msgList=[];
   demomessage:Chatmessages;
+  currentMsg:string='123345';
   constructor(public socketService:SocketIoDemoService) {
-    // console.log(this.chatId);
-    // let currentmsg='';
-    
-    // var msg=new Message(123,123,'2017-01-01','这是聊天的内容，需要如何展示呢！');
-    // msgList.push(msg);
-    // msgList.push(msg);
-    // msgList.push(msg);
-    // this.demomessage=new Chatmessages(124,msgList);
-   }
+    this.lastMessageEmitter.emit('message');
+  }
 
   ngOnInit() {
-    // let chatId="init";
-    // let currentmsg='';
-    // console.log(this.chatId);
-    // this.socket = io('http://localhost:3000');
-    // this.socket.on('connect', function() {
-    //   console.log("connect from angular2");
-    // });
+    console.log("Current Chat Room "+ this.chatRoom);
+    this.currentRoom=this.chatRoom;
     this.socketService.getMessage().subscribe(message=>{
       console.log(message);
       this.msgList.push(message);
+      this.lastMessageEmitter.emit(message);
     })
   }
+  ngOnChange(){
+    this.currentRoom=this.chatRoom;
+    console.log("Current Chat Room "+ this.currentRoom);
+  }
+
   emitFunction(val:String){
     //console.log(val);
     console.log(this.demomessage);
@@ -57,10 +54,13 @@ export class ChatComponent implements OnInit {
      //Send Message to the server.
     //this.socket.emit("message",val,user);y
     this.socketService.sendMessage(val,user);
+    this.currentMsg=null;
   }
   sendMessage(val:string){
+    console.log("Current Chat Room "+ this.chatRoom);
     console.log('client click '+val)
     this.socketService.sendMessage(val,localStorage.getItem('token'));
+    this.currentMsg=null;
   }
   createRoom(roomname:string,user:string){
     //this.socketService.joinRoom(roomname);
@@ -75,5 +75,12 @@ export class ChatComponent implements OnInit {
     console.log(room);
     console.log(user);
     this.socketService.joinRoom(room,user);
+  }
+  sendDemoMsg(msg:HTMLInputElement,room){
+    console.log('currentRoom'+room);
+    console.log('currentMsg'+msg);
+    this.socketService.joinRoom(room,null);
+    this.socketService.sendDemoMessage(msg.value,null);
+    msg.value=null;
   }
 }

@@ -19,19 +19,20 @@ export const routes:Routes=[
                   
                     {
                         path:':id',
-                        component:MycontactComponent
+                        component:MychatComponent
                     }
                 ]
             },
             {
                 path:':id',
-                component:MycontactComponent
+                component:MychatComponent
             }
         ]
      },
     {   path:'mycontact',
-        component:MycontactComponent,
-        canActivate:[RouteGuard]
+        component:MycontactComponent
+        // ,
+        // canActivate:[RouteGuard]
     },
     {   path:'myfavorite',
         component:MyfavoriteComponent,
@@ -52,4 +53,4 @@ export const routes:Routes=[
     }
 ]
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes,{ enableTracing: true } );
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes,{ enableTracing: false } );

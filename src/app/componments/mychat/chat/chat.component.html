@@ -1,17 +1,18 @@
-<div>
+<!-- <div>
   <div class="chatwin" *ngFor="let msg of msgList">
     <span>{{msg.text}}</span>
+    <span>{{chatRoom}}</span>
   </div>
 
   <div class="chatinpbox">
     <!-- <input class="inputbox" type="text"  #value> -->
-    <textarea rows=6 class="inputbox" type="text" #value></textarea>
+    <!-- <textarea rows=6 class="inputbox" type="text" #value>{{chatRoom}}</textarea>
     <div class="sendBtn">
       <input  type="button" value="群发" (click)="sendMsg(value.value,'laoma')" />
     </div>
   </div>
 
-</div>
+</div> -->  
 <!--
 
 <br> <span>登记房间信息-目前不用</span><br>
@@ -24,3 +25,50 @@
 <br>
 <input type="button" value="JoinRoom" (click)="joinRoom(room.value,username.value)"/>
 -->
+<div class="right-panel">
+  <div class="right-top-panel">
+    <div class="talk-panel">
+      <div class="talk-list">
+        <ul>
+          <li *ngFor="let msg of msgList">
+            <div class="talk-user-img">
+              <img src="/assets/images/Neo_48px.png" width="48" height="48" alt="" />
+            </div>
+            <div class="talk-cont-bar">
+              <div class="talk-user-name">张三</div>
+              <div class="talk-sub">
+                <span class="talk-cont">{{msg.text}}</span>
+                <span class="talk-ico"></span>
+              </div>
+            </div>
+          </li>
+          <!-- <li class="talk-right">
+            <div class="talk-user-img">
+              <img src="/assets/images/Neo_48px.png" width="48" height="48" alt="" />
+            </div>
+            <div class="talk-cont-bar">
+              <div class="talk-user-name">Lisi</div>
+              <div class="talk-sub">
+                <span class="talk-cont">在县城线程执行
+                  <br>在县城线程执行在县城线程执行在县城线程执行
+                  <br>在县城线程执行在县城线程执行在县城线程执行
+                  <br>在县城线程执行在县城线程执行在县城线程执行</span>
+                <span class="talk-ico"></span>
+              </div>
+            </div>
+          </li> -->
+
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="right-bottom-panel">
+    <textarea class="input-txt" #msg></textarea>
+    <div class="btn-bar">
+      <input class="btn" type="button" (click)="sendDemoMsg(msg,chatRoom)" value="发送"/>
+    </div>
+  </div>
+</div>

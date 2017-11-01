@@ -35,7 +35,7 @@ io.sockets.on('connection', function(socket) {
         });
 
         // 客户端发送消息// 可根据状态发送给不同的客户端。
-        socket.on('sendmsg', (message,token) => {
+       /* socket.on('sendmsg', (message,token) => {
             //console.log('message received');
             //console.log(socket.id);
             console.log(message);
@@ -48,6 +48,21 @@ io.sockets.on('connection', function(socket) {
             socket.broadcast.to('abc123').emit('receivemsg',{type:'new-message', text: '创建room成功'}); 
             // 发送到所有room 人
             io.sockets.in('abc123').emit('receivemsg',{type:'new-message', text: '加入room成功'})  
+        });*/
+        // 客户端发送消息// 可根据状态发送给不同的客户端。
+        socket.on('sendmsg', (message,room,token) => {
+            //console.log('message received');
+            //console.log(socket.id);
+            console.log(message);
+            console.log(token);
+            var decodetoken=jwt.decode(token);
+            console.log(decodetoken);
+            io.emit('receivemsg', {type:'new-message', text: message});    
+            //io.emit('receivemsg', {type:'new-message', text: '这是系统自动回复'}); 
+            // 除自己外发送
+            //socket.broadcast.to(room).emit('receivemsg',{type:'new-message', text: message}); 
+            // 发送到所有room 人
+            io.sockets.in(room).emit('receivemsg',{type:'new-message', text: message})  
         });
         
         // 可暂时不用

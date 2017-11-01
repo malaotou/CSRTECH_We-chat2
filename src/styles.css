@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
 html,body{
     height:100%;
     width: 100%;
@@ -10,6 +10,317 @@ html,body{
     -ms-overflow-style: scrollbar;
     -webkit-app-region:drag;
 } */
-.draggable {
+
+
+/* .draggable {
     -webkit-app-region: drag;
+} */
+
+* {
+    font: "Microsoft YaHei";
+    font-size: 12px;
+    color: #555
+}
+
+html,
+body,
+div,
+table,
+tr,
+th,
+td,
+ul,
+li,
+input,
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%
+}
+
+::-ms-clear,
+ ::-ms-reveal {
+    display: none;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+}
+
+.left-panel {
+    position: relative;
+    width: 60px;
+    height: 100%;
+    float: left;
+    background: #707B88
+}
+
+.left-top-nav,
+.left-top-nav ul {
+    width: 100%;
+    height: auto;
+    overflow: hidden
+}
+
+.left-top-nav ul li,
+.left-bottom-nav ul li {
+    width: 100%;
+    height: 60px;
+    overflow: hidden
+}
+
+.left-top-nav ul li a,
+.left-bottom-nav ul li a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+}
+
+.left-top-nav ul li:active,
+.left-top-nav ul li.active {
+    background: #636B74
+}
+
+.left-bottom-nav,
+.left-bottom-nav ul {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.middle-panel {
+    width: 280px;
+    height: 100%;
+    float: left;
+    background: #F5F5F5;
+    border-right: 1px solid #ddd
+}
+
+.search-panel {
+    width: 280px;
+    height: 60px;
+}
+
+.search-bar {
+    margin: 15px auto;
+    width: 220px;
+    height: 30px;
+    border: 1px solid #ddd
+}
+
+.search-bar input {
+    width: 214px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 3px;
+    background: url(/assets/images/Search_50px.png) 98% 50% no-repeat;
+    background-size: 10%
+}
+
+.right-panel {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden
+}
+
+.right-top-panel {
+    width: 100%;
+    height: 70%;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.right-bottom-panel {
+    width: 100%;
+    height: 30%;
+}
+
+.data-list,
+.data-list ul {
+    width: 100%;
+    height: auto;
+    overflow: hidden
+}
+
+.data-list ul li {
+    height: auto;
+    overflow: hidden;
+}
+
+.data-list ul li a {
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+    display: block
+}
+
+.com-logo {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4
+}
+
+.com-name {
+    font-size: 14px;
+    font-weight: bold;
+    float: left
+}
+
+.com-details {
+    width: 100%;
+    height: auto;
+    overflow: hidden
+}
+
+.com-rz {
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    float: left
+}
+
+.com-name-bar {
+    height: auto;
+    overflow: hidden
+}
+
+.com-talk {
+    margin-top: 15px;
+    color: #888
+}
+
+.talk-time {
+    margin-right: 5px;
+    float: right;
+    color: #aaa;
+    font: Tahoma
+}
+
+.data-list ul li.active,
+.data-list ul li.active a:hover {
+    background: #e2e2e2
+}
+
+.data-list ul li a:hover {
+    background: #eee
+}
+
+.talk-panel {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto
+}
+
+.talk-list,
+.talk-list ul {
+    width: 100%;
+    height: auto;
+    overflow: hidden
+}
+
+.talk-list ul li {
+    padding: 10px;
+    height: auto;
+    overflow: hidden
+}
+
+.talk-list ul li div.talk-user-img,
+.talk-list ul li div.talk-cont-bar {
+    float: left
+}
+
+.talk-list ul li div.talk-cont-bar {
+    height: auto;
+    /*overflow:hidden */
+}
+
+.talk-list ul li div.talk-sub {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.talk-list ul li div.talk-user-name {
+    font-weight: bold;
+    color: #aaa;
+    font: "Microsoft YaHei";
+    font-size: 16px
+}
+
+.talk-list ul li span.talk-cont {
+    padding: 10px;
+    font-size: 13px;
+    display: block;
+    color: #fff;
+    line-height: 150%;
+    border: 1px solid #066EB4;
+    border-radius: 5px;
+    background: #55B8EC
+}
+
+.talk-list ul li span.talk-ico {
+    position: absolute;
+    top: 10px;
+    left: -11px;
+    width: 12px;
+    height: 18px;
+    display: block;
+    background: url(/assets/images/arrow-left.png) left no-repeat
+}
+
+.talk-list ul li.talk-right div {
+    float: right
+}
+
+.talk-list ul li.talk-right div span.talk-ico {
+    position: absolute;
+    left: unset;
+    right: -11px;
+    background: url(/assets/images/arrow-right.png) right no-repeat
+}
+
+.talk-list ul li.talk-right div span.talk-cont {
+    background: #2DB200;
+    border: 1px solid #238C00
+}
+
+.input-txt {
+    width: 100%;
+    height: 80%;
+    line-height: 150%;
+    border: none
+}
+
+.btn-bar {
+    width: 100%;
+    height: auto;
+    overflow: hidden
+}
+
+.btn {
+    margin-right: 20px;
+    float: right;
+    width: 80px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #1382DC;
+    color: #fff;
+    border: 1px solid #1260BC
 }
