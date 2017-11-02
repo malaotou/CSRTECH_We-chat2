@@ -30,16 +30,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## 使用方法
 
- 1、git clone https://github.com/malaotou/CSRTECH_We-chat2.git
- 2、 cd CSRTECH_We-chat2
- 3、 npm install
+## 1、git clone https://github.com/malaotou/CSRTECH_We-chat2.git
+## 2、 cd CSRTECH_We-chat2
+## 3、 npm install
 
 ## 以下命令在项目根目录执行
-1 、Socket服务端
-    node ./server/server.js
+## 1 、Socket服务端
+##    node ./server/server.js
 
-2、 Web 页面测试端
-    ng serve   
+## 2、 Web 页面测试端
+##    ng serve   
 
-3、打包功能，目前可能存在点问题
-   npm run-script elec     
+## 3、打包功能，目前可能存在点问题
+##   npm run-script elec     
