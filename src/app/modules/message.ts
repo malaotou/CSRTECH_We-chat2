@@ -8,11 +8,13 @@ export class Message {
     userId:number;
     date:number;
     message:string;
-    constructor(message:string,userid:number,username?:string){
+    room:string;
+    constructor(message:string,userid:number,room?:string,username?:string){
         this.Id=UUID.UUID();
         this.userId=userid;
         this.date=Date.now(); ;
         this.message=message;
         this.userName=username;
+        this.room=room;
     }
 }
