@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftnavtabComponent implements OnInit {
 
+  name=localStorage.getItem('uname');
   constructor() { }
 
   ngOnInit() {

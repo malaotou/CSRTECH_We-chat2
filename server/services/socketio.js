@@ -88,7 +88,7 @@ io.sockets.on('connection', function(socket) {
             socket.room = "abc123";
             socket.join("abc123",function(roomname){
                 // 发送给所有非自己
-                socket.to("abc123").emit('receivemsg',{type:'new-message', text: '加入room成功'})
+                //socket.to("abc123").emit('receivemsg',{type:'new-message', text: '加入room成功'})
             });
         })
     });

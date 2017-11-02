@@ -26,7 +26,7 @@ export class AuthenticateService{
         }
         else{
             console.log('not login no token')
-            this.router.navigate(['/login']);
+            //this.router.navigate(['/login']);
         }
         return rtn;       
     }

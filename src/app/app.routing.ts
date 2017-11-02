@@ -35,8 +35,8 @@ export const routes:Routes=[
         // canActivate:[RouteGuard]
     },
     {   path:'myfavorite',
-        component:MyfavoriteComponent,
-        canActivate:[RouteGuard]
+        component:MyfavoriteComponent//,
+        //canActivate:[RouteGuard]
     },
     {
         path:'login',
@@ -44,12 +44,12 @@ export const routes:Routes=[
     },
     {
         path:'',
-        redirectTo:'mychat',
+        redirectTo:'mycontact',
         pathMatch:'full'
     },
     {
         path:"**",
-        component:MychatComponent
+        component:MycontactComponent
     }
 ]
 

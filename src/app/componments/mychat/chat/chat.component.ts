@@ -21,8 +21,11 @@ export class ChatComponent implements OnInit {
   msgList=[];
   demomessage:Chatmessages;
   currentMsg:string='123345';
+  currentuser='laoma1'
   constructor(public socketService:SocketIoDemoService) {
     this.lastMessageEmitter.emit('message');
+    console.log(localStorage.getItem('uname'));
+    this.currentuser=localStorage.getItem('uname');
   }
 
   ngOnInit() {
@@ -43,9 +46,9 @@ export class ChatComponent implements OnInit {
     //console.log(val);
     console.log(this.demomessage);
     this.demomessage.messages.push(
-      new Message(
-        1,2,Date.now().toString(),"测试消息"  
-      )
+      // new Message(
+      //   1,2,Date.now().toString(),"测试消息"  
+      // )
     )
     this.socket.emit('login',val);
     
@@ -77,10 +80,18 @@ export class ChatComponent implements OnInit {
     this.socketService.joinRoom(room,user);
   }
   sendDemoMsg(msg:HTMLInputElement,room){
-    console.log('currentRoom'+room);
-    console.log('currentMsg'+msg);
-    this.socketService.joinRoom(room,null);
-    this.socketService.sendDemoMessage(msg.value,null);
-    msg.value=null;
+    var data:any=msg.value;
+    console.log(data)
+    if(data!=""){
+      console.log('currentRoom'+room);
+      console.log('currentMsg'+msg);
+      this.socketService.joinRoom(room,null);
+
+      var message=new Message(msg.value,null,localStorage.getItem('uname'))
+
+      this.socketService.sendDemoMessage(message,null);
+      msg.value=null;
+    }
+   
   }
 }

@@ -1,12 +1,18 @@
+import { Moment } from 'moment/moment';
+import { uuid } from 'uuid/v1'
+import { UUID } from 'angular2-uuid'
+let moment:Moment;
 export class Message {
-    Id:number;
+    Id:string;
+    userName:string;
     userId:number;
-    date:string;
+    date:number;
     message:string;
-    constructor(id:number,userid:number,date:string,message:string){
-        this.Id=id;
+    constructor(message:string,userid:number,username?:string){
+        this.Id=UUID.UUID();
         this.userId=userid;
-        this.date=date;
+        this.date=Date.now(); ;
         this.message=message;
+        this.userName=username;
     }
 }

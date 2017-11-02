@@ -1,15 +1,46 @@
 export const users=[
     {
+        name:'陈一',
         account:'user1',
         password:'user1',
         avatar:''
     },
     {
+        name:'黄二',
         account:'user2',
         password:'user2',
         avatar:''
     },
     {
+        name:'张三',
+        account:'user3',
+        password:'user3',
+        avatar:''
+    }
+    ,
+    {
+        name:'李四',
+        account:'user3',
+        password:'user3',
+        avatar:''
+    }
+    ,
+    {
+        name:'王五',
+        account:'user3',
+        password:'user3',
+        avatar:''
+    }
+    ,
+    {
+        name:'赵六',
+        account:'user3',
+        password:'user3',
+        avatar:''
+    }
+    ,
+    {
+        name:'钱七',
         account:'user3',
         password:'user3',
         avatar:''

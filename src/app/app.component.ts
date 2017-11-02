@@ -4,6 +4,8 @@ import { Overlay } from 'ngx-modialog';
 import {Subject,Observable,BehaviorSubject} from 'rxjs'
 import { AuthenticateService } from './services/authenticate.server'
 
+import { users } from '../app/demoData/user';
+
 import { Router } from '@angular/router'
 @Component({
   selector: 'app-root',
@@ -22,6 +24,10 @@ export class AppComponent {
     // console.log("==========")
     this.text1.bufferCount(10)
     .subscribe(v=>console.log(v));
+
+    //$scope.randomQuote = $scope.quotes[Math.floor(Math.random() * $scope.quotes.length)];
+    console.log(users.length);
+    localStorage.setItem('uname',users[Math.floor(Math.random()*users.length)].name)
      
   }
 
