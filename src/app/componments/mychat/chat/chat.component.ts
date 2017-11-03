@@ -15,7 +15,8 @@ import  'rxjs'
 export class ChatComponent implements OnInit {
   socket = null;
   @Input() chatRoom:any;
-  @Output() lastMessageEmitter=new EventEmitter()
+  @Output() lastMessageEmitter=new EventEmitter<Message>()
+  @Output() messageroom=new EventEmitter<string>()
   currentmsg:any;
   currentRoom:any;
   msgList=[];
@@ -23,9 +24,10 @@ export class ChatComponent implements OnInit {
   currentMsg:string='123345';
   currentuser='laoma1'
   constructor(public socketService:SocketIoDemoService) {
-    this.lastMessageEmitter.emit('message');
+    //this.lastMessageEmitter.emit('message');
     console.log(localStorage.getItem('uname'));
     this.currentuser=localStorage.getItem('uname');
+    this.messageroom.emit('yamaxun');
   }
 
   ngOnInit() {
@@ -34,7 +36,8 @@ export class ChatComponent implements OnInit {
     this.socketService.getMessage().subscribe(message=>{
       console.log(message);
       this.msgList.push(message);
-      this.lastMessageEmitter.emit(message);
+      this.messageroom.emit('myroom')
+      //this.lastMessageEmitter.emit(message);
     })
   }
   ngOnChange(){
@@ -89,6 +92,8 @@ export class ChatComponent implements OnInit {
       var message=new Message(msg.value,null,room,localStorage.getItem('uname'))
       this.socketService.sendDemoMessage(message,null);
       msg.value=null;
+
+      //this.messageroom.emit('myroom')
     }
    
   }

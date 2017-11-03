@@ -31,7 +31,7 @@
           </div>
         </div>
       </td>
-      <td style="width:90%"><app-chat (lastMessageEmitter)="getTheLastMsg($event)"  [chatRoom]="currentRoom"></app-chat></td>
+      <td style="width:90%"><app-chat (lastMessageEmitter)="getTheLastMsg($event)"  [chatRoom]="currentRoom" (messageroom)="getcurrentRoom($event)"></app-chat></td>
     </tr>
   </table>
   <span><input type="button" (click)="additem()" value="addItem"/> <input type="button" (click)="getroom()" value="getrooms"/></span>

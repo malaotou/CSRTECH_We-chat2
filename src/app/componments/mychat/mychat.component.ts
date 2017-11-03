@@ -52,4 +52,8 @@ export class MychatComponent implements OnInit {
     this.chatRooms.filter(item=>item===this.currentRoom).lastmsg =data.text;
     //this.lastMessage=data.text;
   }
+  getcurrentRoom(value){
+    console.log('this is the current room');
+    console.log(value);
+  }
 }
