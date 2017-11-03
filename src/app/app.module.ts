@@ -19,7 +19,6 @@ import { MyinfoComponment } from './componments/myInfo/myinfo.component';
 import { routing } from './app.routing'
 import { RouteGuard } from './services/routeguard.guard';
 import { AuthenticateService } from './services/authenticate.server'
-import { DemoComponent } from './componments/demo.component'
 import {AuthHttp,AuthConfig} from 'angular2-jwt';
 import { AuthModule } from './services/http/AuthHttp'
 
@@ -33,7 +32,6 @@ import { AuthModule } from './services/http/AuthHttp'
   
     ChatComponent,
     MyfavoriteComponent,
-    DemoComponent,
     LoginComponment,
     LogoutComponent,
     MyinfoComponment
