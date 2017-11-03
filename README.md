@@ -27,8 +27,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-
-## 使用方法
+## 1、运行环境
+    Node 
+    Angular & Angular Cli
+    
+## 2、使用方法
 
 ## 1、git clone https://github.com/malaotou/CSRTECH_We-chat2.git
 ## 2、 cd CSRTECH_We-chat2
