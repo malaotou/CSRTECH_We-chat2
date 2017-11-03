@@ -15,7 +15,6 @@ export class Demo4Service {
       
     }
     this.chatrooms.push(roomid);
-    console.log(this.chatrooms);
   }
   getRooms() {
     return Observable.from(this.chatrooms);

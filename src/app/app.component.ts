@@ -20,13 +20,8 @@ export class AppComponent {
   constructor(auth:AuthenticateService,private router:Router){
     //this.text1.debounceTime(1000).subscribe(value=>console.log(value));
     this.isAuthened=auth.isAuthenticated();
-    // console.log(this.isAuthened);
-    // console.log("==========")
     this.text1.bufferCount(10)
     .subscribe(v=>console.log(v));
-
-    //$scope.randomQuote = $scope.quotes[Math.floor(Math.random() * $scope.quotes.length)];
-    console.log(users.length);
     localStorage.setItem('uname',users[Math.floor(Math.random()*users.length)].name)
      
   }

@@ -22,7 +22,6 @@ export class MychatComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('init my chat componment');
     this.route.queryParams.subscribe(item => {
       this.currentRoom = item['id'];
       this.chatRooms.push(
@@ -39,28 +38,16 @@ export class MychatComponent implements OnInit {
       this.currentRoom = item['id'];
     });
   }
-  additem() {
-    this.demo.addroom("demo");
-  }
-  getroom() {
-    this.demo.getRooms().subscribe((item) => {
-      console.log(item);
-    })
-  }
+
   getTheLastMsg(data) {
     console.log(data.text)
     this.chatRooms.filter(item => item === this.currentRoom).lastmsg = data.text;
     //this.lastMessage=data.text;
   }
   getcurrentRoom(value) {
-    console.log('this is the current room');
-    console.log(value);
     this.currentRoom = value;
     if (this.chatRooms) {
-      console.log(this.chatRooms);
-      console.log("========================");
       var rooms = this.chatRooms.find(item => item.id === this.currentRoom);
-      console.log(rooms);
       if (!rooms) {
         // this.chatRooms.push(
         //   Companys.find(item=>item.id===this.currentRoom)
@@ -68,7 +55,7 @@ export class MychatComponent implements OnInit {
         this.router.navigate(['/mychat'], { queryParams: { id: this.currentRoom } });
       }
 
-      console.log(this.chatRooms);
+      
     }
   }
 }

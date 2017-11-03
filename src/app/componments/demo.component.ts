@@ -23,40 +23,28 @@ export class DemoComponent implements OnInit {
 
     
     //var user=localStorage.getItem('token');
-    //console.log('localstorage')
-    //console.log(JSON.stringify(user));
     // if(user){
       //this.login();
     // }
     //this.getApiMessages();
     //this.register();
-    console.log("check login status");
     this.authenticate.isAuthenticated();
    }
    
   ngOnInit() {
     this.connection=this.ioService.getMessage().subscribe(message=>{
-      this.messages.push(message);
-      console.log(message);
-      
+      this.messages.push(message);     
     });
    
   }
-  sendMessage(val:string){
-    console.log('client click '+val)
-    this.ioService.sendMessage(val,localStorage.getItem('token'));
-    this.message = '';
-  }
+  // sendMessage(val:string){
+  //   this.ioService.sendMessage(val,localStorage.getItem('token'));
+  //   this.message = '';
+  // }
   ngOnDestroy() {
     this.connection.unsubscribe();
   }
 
-  getApiMessages(){
-    console.log('fdsa')
-    console.log(this.httpService.getData().subscribe(data=>{
-      this.apimessae=data;
-    }));
-  }
   login(){
     console.log('login');
     var u=new user();

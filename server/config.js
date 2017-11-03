@@ -1,6 +1,6 @@
 module.exports={
     api:{
-            host:'192.168.10.254',
+            host:'localhost',
             port:'3000'
         },
     db:{

@@ -53,16 +53,19 @@ io.sockets.on('connection', function(socket) {
         socket.on('sendmsg', (message,room,token) => {
             //console.log('message received');
             //console.log(socket.id);
-            console.log(message);
-            console.log(token);
-            var decodetoken=jwt.decode(token);
-            console.log(decodetoken);
-            io.emit('receivemsg', {type:'new-message', text: message});    
+            // console.log(message);
+            // console.log(token);
+            // var decodetoken=jwt.decode(token);
+            // console.log(decodetoken);
+            //io.emit('receivemsg', {type:'new-message', text: message});    
             //io.emit('receivemsg', {type:'new-message', text: '这是系统自动回复'}); 
             // 除自己外发送
             //socket.broadcast.to(room).emit('receivemsg',{type:'new-message', text: message}); 
             // 发送到所有room 人
-            io.sockets.in(room).emit('receivemsg',{type:'new-message', text: message})  
+            
+            io.sockets.in(room).emit('receivemsg',{type:'new-message', text: message});
+            var usersInRoom = io.of('/').in(room).clients;
+            
         });
         
         // 可暂时不用
@@ -82,13 +85,14 @@ io.sockets.on('connection', function(socket) {
 
         // 进入聊天室，客户通过发起消息加入，客服通过匹配逻辑，后台自动分配先关的聊天组。
         socket.on('joinroom',function(room,user){
-            socket.room = 'Lobby';
-            socket.join('Lobby');
-            socket.emit('updatechat', 'SERVER', 'you have connected to Lobby');
-            socket.room = "abc123";
-            socket.join("abc123",function(roomname){
+            //socket.room = 'Lobby';
+            //socket.join('Lobby');
+            //socket.emit('updatechat', 'SERVER', 'you have connected to Lobby');
+            socket.room = room;
+            socket.join(room,function(roomname){
                 // 发送给所有非自己
                 //socket.to("abc123").emit('receivemsg',{type:'new-message', text: '加入room成功'})
+                console.log("user："+user +"join room: "+ room );
             });
         })
     });

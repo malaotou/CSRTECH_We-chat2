@@ -10,7 +10,6 @@ import { LeftnavtabComponent } from './componments/leftnavtab/leftnavtab.compone
 import { MycontactComponent } from './componments/mycontact/mycontact.component';
 import { MychatComponent } from './componments/mychat/mychat.component';
 import { ContactdetailComponent } from './componments/mycontact/contactdetail/contactdetail.component';
-import { ChatlistComponent } from './componments/mychat/chatlist/chatlist.component';
 import { ChatComponent } from './componments/mychat/chat/chat.component';
 import { MyfavoriteComponent } from './componments/myfavorite/myfavorite.component';
 import { LoginComponment } from './componments/login/login.component'
@@ -31,7 +30,7 @@ import { AuthModule } from './services/http/AuthHttp'
     MycontactComponent,
     MychatComponent,
     ContactdetailComponent,
-    ChatlistComponent,
+  
     ChatComponent,
     MyfavoriteComponent,
     DemoComponent,

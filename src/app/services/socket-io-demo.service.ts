@@ -12,9 +12,9 @@ export class SocketIoDemoService {
   constructor(){
     this.socket = io(this.URL);
   }
-  sendMessage(message,token){
-    this.socket.emit('sendmsg', message,token);    
-  }
+  // sendMessage(message,token){
+  //   this.socket.emit('sendmsg', message,token);    
+  // }
   sendDemoMessage(message,room){
     this.socket.emit('sendmsg', message,room,null);    
   }
@@ -23,6 +23,8 @@ export class SocketIoDemoService {
     var observable=new Observable(observer=>{     
       this.socket.on('receivemsg', (data) => {
         observer.next(data);    
+        console.log('receive Data');
+        console.log(data);
       });
       return () => {
         this.socket.disconnect();

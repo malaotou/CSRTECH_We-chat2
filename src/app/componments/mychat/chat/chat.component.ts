@@ -21,23 +21,18 @@ export class ChatComponent implements OnInit {
   currentRoom:any;
   msgList=[];
   demomessage:Chatmessages;
-  currentMsg:string='123345';
-  currentuser='laoma1'
+  currentuser;
   constructor(public socketService:SocketIoDemoService) {
-    //this.lastMessageEmitter.emit('message');
-    console.log(localStorage.getItem('uname'));
+    // Get current user
     this.currentuser=localStorage.getItem('uname');
-    this.messageroom.emit('yamaxun');
   }
 
   ngOnInit() {
-    console.log("Current Chat Room "+ this.chatRoom);
     this.currentRoom=this.chatRoom;
     this.socketService.getMessage().subscribe(message=>{
       console.log(message);
       this.msgList.push(message);
-      this.messageroom.emit(this.currentRoom)
-      //this.lastMessageEmitter.emit(message);
+      this.messageroom.emit(this.currentRoom);       
     })
   }
   ngOnChange(){
@@ -56,18 +51,18 @@ export class ChatComponent implements OnInit {
     this.socket.emit('login',val);
     
   }
-  sendMsg(val:string,user:string){
-     //Send Message to the server.
-    //this.socket.emit("message",val,user);y
-    this.socketService.sendMessage(val,user);
-    this.currentMsg=null;
-  }
-  sendMessage(val:string){
-    console.log("Current Chat Room "+ this.chatRoom);
-    console.log('client click '+val)
-    this.socketService.sendMessage(val,localStorage.getItem('token'));
-    this.currentMsg=null;
-  }
+  // sendMsg(val:string,user:string){
+  //    //Send Message to the server.
+  //   //this.socket.emit("message",val,user);y
+  //   this.socketService.sendMessage(val,user);
+    
+  // }
+  // sendMessage(val:string){
+  //   console.log("Current Chat Room "+ this.chatRoom);
+  //   console.log('client click '+val)
+  //   this.socketService.sendMessage(val,localStorage.getItem('token'));
+    
+  // }
   createRoom(roomname:string,user:string){
     //this.socketService.joinRoom(roomname);
     this.socketService.ceateRoom(roomname,user);
@@ -85,12 +80,12 @@ export class ChatComponent implements OnInit {
   sendDemoMsg(msg:HTMLInputElement,room){
     var data:any=msg.value;
     console.log(data)
-    if(data!=""){
+    if(data!="" && room!=null){
       console.log('currentRoom'+room);
       console.log('currentMsg'+msg);
-      this.socketService.joinRoom(room,null);
+      this.socketService.joinRoom(room||this.currentRoom,localStorage.getItem('uname'));
       var message=new Message(msg.value,null,room,localStorage.getItem('uname'))
-      this.socketService.sendDemoMessage(message,null);
+      this.socketService.sendDemoMessage(message,room);
       msg.value=null;
 
       //this.messageroom.emit('myroom')

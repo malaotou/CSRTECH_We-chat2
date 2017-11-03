@@ -4,7 +4,6 @@ import  { MycontactComponent } from "./componments/mycontact/mycontact.component
 import  { MychatComponent } from './componments/mychat/mychat.component'
 import  { MyfavoriteComponent } from './componments/myfavorite/myfavorite.component'
 import  { LoginComponment } from './componments/login/login.component'
-import  { ChatlistComponent } from './componments/mychat/chatlist/chatlist.component';
 import { ChatComponent } from './componments/mychat/chat/chat.component'
 import  { RouteGuard } from './services/routeguard.guard';
 export const routes:Routes=[
@@ -14,7 +13,7 @@ export const routes:Routes=[
         children:[
             {
                 path:'',
-                component:ChatlistComponent,
+                component:MychatComponent,
                 children:[
                   
                     {
