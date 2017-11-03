@@ -43,3 +43,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## 3、打包功能，目前可能存在点问题
 ##   npm run-script elec     
+
+##Demo Page 
+![](https://github.com/malaotou/CSRTECH_We-chat2/blob/master/screenshoots/Capture.PNG)
