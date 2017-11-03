@@ -36,7 +36,7 @@ export class ChatComponent implements OnInit {
     this.socketService.getMessage().subscribe(message=>{
       console.log(message);
       this.msgList.push(message);
-      this.messageroom.emit('myroom')
+      this.messageroom.emit(this.currentRoom)
       //this.lastMessageEmitter.emit(message);
     })
   }
