@@ -48,6 +48,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       npm run-script elec     
 ## 需要修改服务地址
 ![](https://github.com/malaotou/CSRTECH_We-chat2/blob/master/screenshoots/config.PNG)
-![](https://github.com/malaotou/CSRTECH_We-chat2/blob/master/screenshoots/config1.PNG)
+![](https://github.com/malaotou/CSRTECH_We-chat2/blob/master/screenshoots/Capture2.PNG)
 ##Demo Page 
 ![](https://github.com/malaotou/CSRTECH_We-chat2/blob/master/screenshoots/Capture.PNG)
