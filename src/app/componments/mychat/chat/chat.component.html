@@ -32,7 +32,7 @@
         <ul>
           <li *ngFor="let msg of msgList" [ngClass]="{talkright: currentuser==msg.text.userName}">
             <div class="talk-user-img">
-              <img src="/assets/images/Neo_48px.png" width="48" height="48" alt="" />
+              <img src="./assets/images/Neo_48px.png" width="48" height="48" alt="" />
             </div>
             <div class="talk-cont-bar">
               <div class="talk-user-name">{{msg.text.userName}}</div>
@@ -66,11 +66,11 @@
 
   </div>
   <div class="right-bottom-panel">
- 
+
       <textarea class="input-txt" #msg required></textarea>
       <div class="btn-bar">
         <input class="btn" type="button" (click)="sendDemoMsg(msg,chatRoom)" value="发送" />
       </div>
- 
+
   </div>
 </div>
