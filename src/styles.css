@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files 
+/* You can add global styles to this file, and also import other style files
 html,body{
     height:100%;
     width: 100%;
@@ -21,6 +21,7 @@ html,body{
     font-size: 12px;
     color: #555;
     outline: none;
+
 }
 
 html,
@@ -55,6 +56,7 @@ body {
 .box {
     width: 100%;
     height: 100%;
+    border: 1px solid #ddd;
 }
 
 .left-panel {
@@ -147,6 +149,7 @@ body {
 .right-bottom-panel {
     width: 100%;
     height: 30%;
+    position: relative;
 }
 
 .data-list,
@@ -304,19 +307,21 @@ body {
 
 .input-txt {
     width: 100%;
-    height: 80%;
+    height: 78%;
     line-height: 150%;
     border: none
 }
 
 .btn-bar {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     height: auto;
     overflow: hidden
 }
 
 .btn {
-    margin-right: 20px;
+    margin:5px 20px;
     float: right;
     width: 80px;
     padding: 5px 10px;
@@ -325,3 +330,7 @@ body {
     color: #fff;
     border: 1px solid #1260BC
 }
+.comlogo{ padding: 20px; text-align: center}
+.comdetails{ padding: 0 20px; line-height: 150%;}
+.btnsub{ margin-top: 20px; text-align: center}
+.sendbtn{ width: 100px; height: 40px; line-height: 40px; font-size: 14px; background: #1382dc; color: #fff; border: 1px solid #066eb4; text-align: center;  }
