@@ -6,7 +6,7 @@ import { Companys } from "../../demoData/companys"
   styleUrls: ['./mycontact.component.css']
 })
 export class MycontactComponent implements OnInit {
-  companys:any;
+  companys:Array<any>;
   currentitem:any;
   isActive:boolean;
   constructor() { }
@@ -15,7 +15,9 @@ export class MycontactComponent implements OnInit {
     this.companys=Companys;
   }
   getCompanyDetail(id:string){
+    console.log(id);
     this.currentitem=Companys.filter(item=>{return item.id===id});
+    console.log(this.currentitem);
   }
   search(value:any){
     if(value!=''){

@@ -3,8 +3,8 @@
 </p>
 <span>{{companyInfo|json}}</span> -->
 
-<div *ngFor="let item of companyInfo">
+ <div *ngFor="let item of companyInfo">
   <img src="{{item.avatar}}" width="16" height="16" alt="" />
   {{item.name}} {{item.description}}
   <input type="button" value="Send Message" height="200px" width="300px" (click)="chat(item.id)" />
-</div>
+</div>  

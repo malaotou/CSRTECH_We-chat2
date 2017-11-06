@@ -83,7 +83,7 @@ export class ChatComponent implements OnInit {
     if(data!="" && room!=null){
       console.log('currentRoom'+room);
       console.log('currentMsg'+msg);
-      this.socketService.joinRoom(room||this.currentRoom,localStorage.getItem('uname'));
+      this.socketService.joinRoom(room,localStorage.getItem('uname'));
       var message=new Message(msg.value,null,room,localStorage.getItem('uname'))
       this.socketService.sendDemoMessage(message,room);
       msg.value=null;
