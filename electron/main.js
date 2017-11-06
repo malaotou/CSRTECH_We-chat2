@@ -29,7 +29,7 @@ ipc.on('put-in-tray', function (event) {
 
 function createWindow () {
 
-  mainWindow = new BrowserWindow({width: 800, height: 600,frame:true})
+  mainWindow = new BrowserWindow({width: 800, height: 600,frame:true,autoHideMenuBar:true})
 
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
