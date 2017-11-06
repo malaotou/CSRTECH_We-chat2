@@ -127,7 +127,7 @@ body {
     height: 30px;
     line-height: 30px;
     padding: 0 3px;
-    background: url(/assets/images/Search_50px.png) 98% 50% no-repeat;
+    background: url(./assets/images/Search_50px.png) 98% 50% no-repeat;
     background-size: 10%
 }
 
@@ -283,7 +283,7 @@ body {
     width: 12px;
     height: 18px;
     display: block;
-    background: url(/assets/images/arrow-left.png) left no-repeat
+    background: url(./assets/images/arrow-left.png) left no-repeat
 }
 
 .talk-list ul li.talkright div {
@@ -294,7 +294,7 @@ body {
     position: absolute;
     left: unset;
     right: -11px;
-    background: url(/assets/images/arrow-right.png) right no-repeat
+    background: url(./assets/images/arrow-right.png) right no-repeat
 }
 
 .talk-list ul li.talkright div span.talk-cont {
