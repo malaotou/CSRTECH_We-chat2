@@ -1,1 +1,1 @@
-export const url:string="http://localhost:3000";
+export const url:string="http://18.221.221.162:8888";
