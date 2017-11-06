@@ -11,3 +11,8 @@ img{
     width:26px;
     height:26px;
 }     */
+
+:host{
+    width: 100%;
+    height: 100%;
+}

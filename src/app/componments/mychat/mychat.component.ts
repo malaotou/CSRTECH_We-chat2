@@ -5,7 +5,13 @@ import { Demo4Service } from '../../services/demo4/demo4.service'
 @Component({
   selector: 'app-mychat',
   templateUrl: './mychat.component.html',
-  styleUrls: ['./mychat.component.css'],
+  // styleUrls: ['./mychat.component.css'],
+  styles: [`
+  :host {
+    display: block;
+    width:100%;
+    height:100%;
+  }`],
   providers: [Demo4Service]
 })
 export class MychatComponent implements OnInit {
@@ -53,9 +59,7 @@ export class MychatComponent implements OnInit {
         //   Companys.find(item=>item.id===this.currentRoom)
         // )
         this.router.navigate(['/mychat'], { queryParams: { id: this.currentRoom } });
-      }
-
-      
+      }     
     }
   }
 }
