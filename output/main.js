@@ -29,11 +29,21 @@ ipc.on('put-in-tray', function (event) {
 
 function createWindow () {
 
-  mainWindow = new BrowserWindow({width: 800, height: 600,frame:true,autoHideMenuBar:true})
+  mainWindow = new BrowserWindow({
+                    width: 800,
+                    height: 600,
+                    frame:true,
+                    autoHideMenuBar:true,
+                    minWidth:800,
+                    minHeight:600,
+                    center:true,
+                    alwaysOnTop:true,
+                    skipTaskbar:false,
+                  })
 
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
-  mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed', function () {
     mainWindow = null

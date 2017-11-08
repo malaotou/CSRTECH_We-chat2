@@ -5,13 +5,13 @@ import { Demo4Service } from '../../services/demo4/demo4.service'
 @Component({
   selector: 'app-mychat',
   templateUrl: './mychat.component.html',
-  // styleUrls: ['./mychat.component.css'],
-  styles: [`
-  :host {
-    display: block;
-    width:100%;
-    height:100%;
-  }`],
+  styleUrls: ['./mychat.component.css'],
+  // styles: [`
+  // :host {
+  //   display: block;
+  //   width:100%;
+  //   height:100%;
+  // }`],
   providers: [Demo4Service]
 })
 export class MychatComponent implements OnInit {

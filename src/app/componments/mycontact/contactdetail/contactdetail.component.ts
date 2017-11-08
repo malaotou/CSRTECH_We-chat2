@@ -10,22 +10,23 @@ import { SocketIoDemoService } from '../../../services/socket-io-demo.service'
   providers:[SocketIoDemoService]
 })
 export class ContactdetailComponent implements OnInit {
-  @Input() company: any;
+  @Input() company: Array<any>;
   companyInfo:any;
   constructor(private router:Router,public socketService:SocketIoDemoService) {
 
   }
 
   ngOnInit() {
-
+    console.log(this.company);
   }
   ngOnChanges() {
     this.companyInfo =this.company;
+    console.log(this.companyInfo);
   }
   chat(id){
     // 加入当前所选的Room
-  console.log(this.companyInfo.id);
-    this.socketService.joinRoom(this.company,localStorage.getItem('uname'));
+  console.log(this.company);
+    this.socketService.joinRoom(this.company[0].id,localStorage.getItem('uname'));
     // 跳转到登录页面
     this.router.navigate(['/mychat'],{ queryParams: { id:id}});
   }
