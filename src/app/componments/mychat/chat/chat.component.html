@@ -26,9 +26,9 @@
 <input type="button" value="JoinRoom" (click)="joinRoom(room.value,username.value)"/>
 -->
 <div class="right-panel">
-  <div class="right-top-panel">
-    <div class="talk-panel">
-      <div class="talk-list">
+  <div class="right-top-panel  ">
+    <div class="talk-panel msg-container-base">
+      <div class=" talk-list  " >
         <ul>
           <li *ngFor="let msg of msgList" [ngClass]="{talkright: currentuser==msg.text.userName}">
             <div class="talk-user-img">

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,OnChanges,Output ,EventEmitter} from '@angular/core';
+import { Component, OnInit,Input,OnChanges,Output ,EventEmitter,ElementRef,ViewChild,Renderer2} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Chatmessages } from '../../../modules/chatmessages'
 import { Message } from '../../../modules/message';
@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit {
   msgList=[];
   demomessage:Chatmessages;
   currentuser;
-  constructor(public socketService:SocketIoDemoService) {
+  constructor(public socketService:SocketIoDemoService, public el: ElementRef) {
     // Get current user
     this.currentuser=localStorage.getItem('uname');
   }
@@ -32,6 +32,9 @@ export class ChatComponent implements OnInit {
     this.socketService.getMessage().subscribe(message=>{
       console.log(message);
       this.msgList.push(message);
+      setTimeout(() => {
+        this.scrollToBottom();
+      });
       this.messageroom.emit(this.currentRoom);       
     })
   }
@@ -82,7 +85,7 @@ export class ChatComponent implements OnInit {
     console.log(data)
     if(data!="" && room!=null){
       console.log('currentRoom'+room);
-      console.log('currentMsg'+msg);
+      console.log('currentMsg'+msg.value);
       this.socketService.joinRoom(room,localStorage.getItem('uname'));
       var message=new Message(msg.value,null,room,localStorage.getItem('uname'))
       this.socketService.sendDemoMessage(message,room);
@@ -91,5 +94,10 @@ export class ChatComponent implements OnInit {
       //this.messageroom.emit('myroom')
     }
    
+  }
+  scrollToBottom(): void {
+    const scrollPane: any = this.el
+      .nativeElement.querySelector('.msg-container-base');
+    scrollPane.scrollTop = scrollPane.scrollHeight;
   }
 }

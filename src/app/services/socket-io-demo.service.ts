@@ -7,7 +7,7 @@ import {url} from '../config/config'
 //@Injectable()
 export class SocketIoDemoService {
   private URL = url;  
-  private socket;
+  public socket;
   
   constructor(){
     this.socket = io(this.URL);

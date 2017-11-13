@@ -26,7 +26,9 @@ export class ContactdetailComponent implements OnInit {
   chat(id){
     // 加入当前所选的Room
   console.log(this.company);
+  console.log(this.company[0].id);
     this.socketService.joinRoom(this.company[0].id,localStorage.getItem('uname'));
+    //this.socketService.joinRoom(room,localStorage.getItem('uname'));
     // 跳转到登录页面
     this.router.navigate(['/mychat'],{ queryParams: { id:id}});
   }
