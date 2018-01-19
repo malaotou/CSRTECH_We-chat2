@@ -20,7 +20,10 @@ import { routing } from './app.routing'
 import { RouteGuard } from './services/routeguard.guard';
 import { AuthenticateService } from './services/authenticate.server'
 import {AuthHttp,AuthConfig} from 'angular2-jwt';
-import { AuthModule } from './services/http/AuthHttp'
+import { AuthModule } from './services/http/AuthHttp';
+import { ConfigurationComponent } from './componments/configuration/configuration.component';
+import { ChangePwdComponent } from './componments/configuration/change-pwd/change-pwd.component';
+import { MyteamComponent } from './componments/configuration/myteam/myteam.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { AuthModule } from './services/http/AuthHttp'
     MyfavoriteComponent,
     LoginComponment,
     LogoutComponent,
-    MyinfoComponment
+    MyinfoComponment,
+    ConfigurationComponent,
+    ChangePwdComponent,
+    MyteamComponent
   ],
   imports: [
     BrowserModule,

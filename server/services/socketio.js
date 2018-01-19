@@ -3,7 +3,11 @@ exports.socketService=function(io){
         users = [];
 
         
-io.sockets.on('connection', function(socket) {          
+io.sockets.on('connection', function(socket) {   
+    console.log("new connection");
+        socket.on('test',function(){
+            io.sockets.emit('test2','Response message');
+        })       
         //new user login
         socket.on('login', function(nickname) {
             console.log('login'+nickname);

@@ -49,7 +49,11 @@ html,
 body {
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     overflow: auto;
+=======
+    overflow: hidden;
+>>>>>>> 96b9e4ed1484d610abf93ec6170821692e82ba1e
 }
 
 ::-ms-clear,
@@ -141,20 +145,29 @@ body {
     width: 100%;
     height: 100%;
     float: left;
-    overflow: hidden
+    overflow: hidden;
+    position: relative;
 }
 
 .right-top-panel {
     width: 100%;
     height: 70%;
+<<<<<<< HEAD
     border-bottom: 1px solid #d2d2d2;
     overflow: hidden
+=======
+
+    overflow: hidden;
+>>>>>>> 96b9e4ed1484d610abf93ec6170821692e82ba1e
 }
 
 .right-bottom-panel {
     width: 100%;
     height: 30%;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #d2d2d2;
+    z-index: 9999;
 }
 
 .data-list,
@@ -233,10 +246,10 @@ body {
 .talk-panel {
     width: 100%;
     height: 100%;
-    overflow-y: auto
+    overflow: hidden;
 }
 
-.talk-list,
+.talk-list{width: 100%; height:100%; overflow: auto }
 .talk-list ul {
     width: 100%;
     height: auto;
